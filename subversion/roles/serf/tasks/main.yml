@@ -1,0 +1,6 @@
+---
+- name: unarchive serf package
+  unarchive: src=serf-1.2.1.tar.bz2 dest=/opt
+
+- name: compile and install serf
+  shell: cd /opt/serf-1.2.1 && ./configure --with-apr=/usr/local/apr --prefix=/usr/local/serf --with-apr-util=/usr/local/apr-util && make && make install

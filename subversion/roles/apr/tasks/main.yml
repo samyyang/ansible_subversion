@@ -1,0 +1,6 @@
+---
+- name: unarchive apr pacakge
+  unarchive: src=apr-1.4.8.tar.gz dest=/opt
+
+- name: compile apr and install 
+  shell: cd /opt/apr-1.4.8 && ./configure --prefix=/usr/local/apr && make && make install 

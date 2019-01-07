@@ -1,0 +1,10 @@
+---
+  - name: install subversion related packages
+    yum: name={{ item }} state=installed
+    with_items:
+      - gcc
+      - bzip2
+      - openssl
+      - openssl-devel
+      - expat
+      - expat-devel

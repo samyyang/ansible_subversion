@@ -1,0 +1,7 @@
+---
+- name: unarchive apr-util pacakge
+  unarchive: src=apr-util-1.5.2.tar.gz dest=/opt
+
+- name: compile and install apr-util
+  shell: cd /opt/apr-util-1.5.2 && ./configure --prefix=/usr/local/apr-util --with-apr=/usr/local/apr && make && make install 
+

@@ -1,0 +1,6 @@
+---
+- name: unarchive zlib package
+  unarchive: src=zlib-1.2.8.tar.gz dest=/opt
+
+- name: compile and install zlib
+  shell: cd /opt/zlib-1.2.8 && ./configure --prefix=/usr/local/zlib && make && make install

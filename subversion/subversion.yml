@@ -1,0 +1,11 @@
+---
+- hosts: subversion_hosts
+  remote_user: root
+  roles:
+    - common
+    - apr
+    - apr-util
+    - zlib
+    - sqlite
+    - serf
+    - subversion

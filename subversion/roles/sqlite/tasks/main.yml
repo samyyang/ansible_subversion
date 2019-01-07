@@ -1,0 +1,6 @@
+---
+- name: unarchive sqlite package
+  unarchive: src=sqlite-autoconf-3080200.gz  dest=/opt
+
+- name: compile and install sqlite
+  shell: cd /opt/sqlite-autoconf-3080200 && ./configure --prefix=/usr/local/sqlite && make && make install

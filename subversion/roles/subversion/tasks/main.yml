@@ -1,0 +1,12 @@
+---
+- name: unarchive subversion package
+  unarchive: src=subversion-1.8.8.tar.gz dest=/opt
+
+- name: compile and install subversion
+  shell: cd /opt/subversion-1.8.8 && ./configure --prefix=/usr/local/subversion --with-apr=/usr/local/apr --with-apr-util=/usr/local/apr-util/ --with-zlib=/usr/local/zlib/ --with-sqlite=/usr/local/sqlite && make && make install
+
+- name: configure svn env
+  template: src=.bash_profile dest=/root/.bash_profile
+
+- name: make evn active
+  shell: source /root/.bash_profile
